@@ -1,6 +1,7 @@
+require("dotenv").config();
+
 const express = require("express");
 const app = express();
-const PORT = 3000;
 const cookieParser = require("cookie-parser");
 const path = require("path");
 
@@ -21,6 +22,6 @@ app.use("/owners", ownerRouter);
 app.use("/users", userRouter);
 app.use("/products", productRouter);
 
-app.listen(PORT, () => {
-    console.log(`App is running on port ${PORT}`);
+app.listen(process.env.PORT, () => {
+    console.log(`App is running on port ${process.env.PORT}`);
 });

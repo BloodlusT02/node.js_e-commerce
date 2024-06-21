@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 
-const connectDB = () => {
+const connectDB = async () => {
     try {
-        mongoose.connect("mongodb://localhost:27017/megaProject");
+        await mongoose.connect(`${process.env.MONGODB_URI}/megaProject`);
         console.log("MongoDB databes is connected")
     } catch (error) {
         console.log("ERROR :", error);
