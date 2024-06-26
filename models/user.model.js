@@ -10,16 +10,12 @@ const userSchema = new mongoose.Schema({
         required: true
     },
     password: {
-        String,
+        type: String,
         required: true
     },
     cart: {
         type: Array,
         default: []
-    },
-    isAdmin: {
-        type: Boolean,
-        default: true
     },
     orders: {
         type: Array,
